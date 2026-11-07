@@ -75,8 +75,7 @@ nav .cta:hover { background:var(--leg-dark); color:#fff; }
 .pains li { display:flex; gap:14px; align-items:flex-start; background:#fff; border-radius:14px; padding:18px; box-shadow:0 1px 2px rgba(22,37,58,.06); }
 .pains .dot { flex:none; width:24px; height:24px; color:var(--tide); display:grid; place-items:center; margin-top:1px; }
 .pains .dot .icon { width:21px; height:21px; }
-.statement, .come-in { font-size:1.15rem; line-height:1.6; color:var(--ink2); }
-.statement { margin-top:8px; }
+.statement { font-size:1.15rem; line-height:1.6; color:var(--ink2); margin-top:8px; }
 .statement strong { font-weight:600; color:var(--tide); }
 
 /* Services */
@@ -320,7 +319,7 @@ section[id] { scroll-margin-top:96px; }
 
 /* Sound familiar: handwritten notebook */
 .statement { margin-bottom:6px; }
-.come-in { margin:0; }
+.come-in { font-size:clamp(1.5rem, 2.6vw, 1.9rem); font-weight:600; color:var(--btn); margin:0; letter-spacing:-.01em; }
 .notebook { position:relative; background:#fffdf7; border-radius:6px 14px 14px 6px; padding:30px 34px 34px 64px; transform:rotate(-1.6deg); box-shadow:0 14px 30px rgba(22,37,58,.12), 0 2px 4px rgba(22,37,58,.06);
   background-image:linear-gradient(90deg, transparent 46px, rgba(195,95,31,.35) 46px, rgba(195,95,31,.35) 48px, transparent 48px), repeating-linear-gradient(180deg, transparent 0 39px, #d9e3ec 39px 40px);
   background-position:0 0, 0 22px; font-family:Caveat, "Segoe Print", cursive; color:#1f2f45; }
@@ -391,8 +390,13 @@ section[id] { scroll-margin-top:96px; }
 .jump a.pill-web, .jump a.pill-rep, .jump a.pill-plan { color:#fff; box-shadow:none; font-weight:600; }
 .jump a.pill-web { background:var(--btn); }
 .jump a.pill-rep { background:var(--shore); }
-.jump a.pill-plan { background:#2b4366; box-shadow:inset 0 0 0 1.5px rgba(255,255,255,.35); }
-.jump a.pill-web:hover, .jump a.pill-rep:hover, .jump a.pill-plan:hover { background:#fff; color:var(--tide); }
+.jump a.pill-plan { background:var(--tide); }
+.jump a.pill-web, .jump a.pill-rep, .jump a.pill-plan { box-shadow:inset 0 0 0 1.5px rgba(255,255,255,.35); transition:transform .18s ease; }
+.jump a.pill-web:hover { background:var(--btn); color:#fff; }
+.jump a.pill-rep:hover { background:var(--shore); color:#fff; }
+.jump a.pill-plan:hover { background:var(--tide); color:#fff; }
+.jump a.pill-web:hover, .jump a.pill-rep:hover, .jump a.pill-plan:hover { transform:scale(1.04); }
+@media (prefers-reduced-motion:reduce) { .jump a { transition:none; } .jump a.pill-web:hover, .jump a.pill-rep:hover, .jump a.pill-plan:hover { transform:none; } }
 /* Websites panel balance */
 .panel-lead { margin-bottom:22px; }
 .svc-panel .stat-light { margin-top:22px; }
@@ -532,3 +536,31 @@ section.about { padding:56px 0; }
 }
 .ab .meaning blockquote { display:block; padding:0; border:0; border-radius:0; background:none; box-shadow:none; }
 .ab .meaning blockquote::before { content:none; display:none; }
+
+/* Hero and introductory copy refinements, 7 November 2026. */
+.familiar .statement, .familiar .come-in { font-size:1.15rem; line-height:1.6; font-family:inherit; font-weight:400; letter-spacing:normal; color:var(--ink2); }
+.familiar .come-in { color:var(--ink2); }
+
+/* Match the name explanation heading to James's introduction, retaining its size. */
+.ab .meaning .kicker { font-family:Montserrat,sans-serif; font-weight:300; text-transform:none; letter-spacing:-.025em; }
+.ab .meaning .kicker::before { content:none; }
+
+/* Centre the explanation within the curved stone silhouette. */
+.ab .meaning { text-align:center; }
+.ab .meaning .kicker { justify-content:center; }
+.ab .meaning blockquote { text-wrap:balance; }
+@media (min-width:861px) { .ab .meaning { left:16.4%; } }
+
+/* Selected stone treatment: two quiet passages. */
+.ab .meaning { text-align:center; }
+.ab .meaning .kicker { justify-content:center; font-family:Fraunces,Georgia,serif; font-weight:400; font-size:21px; line-height:1.35; letter-spacing:0; color:var(--btn); margin-bottom:22px; }
+.ab .meaning blockquote { font-size:18px; line-height:1.6; }
+.ab .meaning blockquote p { margin:0; text-wrap:balance; }
+.ab .meaning em { color:inherit; }
+.ab .meaning .bird-name { color:var(--shore); }
+.ab .meaning-divider { display:block; width:32px; height:2px; background:var(--btn); opacity:.45; margin:19px auto; }
+@media(min-width:861px) { .ab .mark { padding-top:150px; isolation:isolate; } .ab .mark::before { content:""; position:absolute; top:150px; bottom:0; left:0; right:0; background:#d2dce0; border-radius:48% 51% 44% 52% / 45% 43% 56% 52%; transform:rotate(-6deg); z-index:-1; } .ab .mark svg { position:absolute; width:74%; right:0; top:0; } .ab .mark .big { display:none; } .ab .meaning { position:relative; left:auto; top:auto; width:66%; margin:0 auto; padding:58px 0 60px; min-height:420px; } }
+@media(max-width:860px) { .ab .meaning { padding:64px 36px 44px; } .ab .meaning blockquote { font-size:17px; } .ab .meaning .kicker { font-size:20px; white-space:normal; } }
+
+/* Balance the inscription between the photograph and the stone foot. */
+@media(min-width:861px) { .ab .meaning { padding-top:94px; padding-bottom:24px; } }

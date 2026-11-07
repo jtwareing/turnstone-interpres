@@ -1,2 +1,4 @@
 User-agent: *
-Disallow: /
+Allow: /
+
+Sitemap: https://jtwareing.github.io/turnstone-interpres/sitemap.xml

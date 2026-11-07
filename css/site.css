@@ -564,3 +564,5 @@ section.about { padding:56px 0; }
 
 /* Balance the inscription between the photograph and the stone foot. */
 @media(min-width:861px) { .ab .meaning { padding-top:94px; padding-bottom:24px; } }
+
+.ab .meaning .latin-word { color:var(--shore); }

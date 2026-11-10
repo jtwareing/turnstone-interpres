@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://jtwareing.github.io/turnstone-interpres/sitemap.xml
+Sitemap: https://turnstoneinterpres.co.uk/sitemap.xml
